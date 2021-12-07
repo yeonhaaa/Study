@@ -27,7 +27,7 @@ class App extends Component {
     if(this.state.mode == 'welcome') {
       title = this.state.welcome.title;
       desc = this.state.welcome.desc;
-    } else if (this.state.mode == 'HTML') {
+    } else if (this.state.mode == 'html') {
       title = this.state.contents[0].title;
       desc = this.state.contents[0].desc;
     } else if (this.state.mode == 'CSS') {
