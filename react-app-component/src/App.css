@@ -1,8 +1,9 @@
 .App {
   text-align: center;
-  }
+}
   .container {
-  border: 5px solid red;
+  text-align: center;
+  border: 5px solid rgb(69, 236, 69);
   margin: 5px;
   }
-  
+      

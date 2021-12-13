@@ -1,0 +1,16 @@
+<!-- AJAX 연습  -->
+<script>
+    const data = fetch("http://ggoreb.com/ajax/json/data1.jsp");
+    
+    // callback 적용 전
+    console.log(data);
+
+    // callback 적용 후
+    data.then((res) => {
+        console.log(res);
+        return res.text();
+    }).then((res) => {
+        console.log(res);
+        console.log(JSON.parse(res).name);
+    })
+</script>
