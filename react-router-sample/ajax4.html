@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const data = axios({
+            url: 'http://ggoreb.com/ajax/json/data2.jsp', //서버의 주소
+            method: 'get', //요청방식
+           
+        });
+        
+        // Parsing
+        data.then(function (result) {
+            console.log(result.data);
+            const data = result.data;
+
+            for(let i = 0; i < data.length; i++) {
+                const age = data[i].age;
+                const name = data[i].name;
+                console.log(age, name);
+            }
+
+            // const age = data[0].age;
+            // const name = data[0].name;
+            // console.log(age,name);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const data = axios({
+            url:'https://www.googleapis.com/youtube/v3/search?part=snippet&q=%EC%8A%AC%EA%B8%B0%EB%A1%9C%EC%9A%B4&maxResults=10&key=AIzaSyCM7VN_a33HR_6ehqD4__o5Qf6ZMxyLIg8',
+            method:'get',
+        });
+        
+        data.then(function(result) {
+            console.log(result.data);
+            const data = result.data;
+            const items = data.items;
+            
+            
+
+            //console.log(items,title);
+
+            for(let i = 0; i < 5; i++) {
+
+                const id = items[i].id; // videoID
+                const snippet = items[i].snippet; // title, des, url
+                                
+                for(let i = 0; i < 5; i++) {
+
+                    const title = snippet.title;
+                    const description = snippet.description;
+                    const videoId = id.videoId;
+                    const url = snippet.thumbnails.default.url;
+
+                    console.log(title, description, videoId, url);
+                }
+
+            
+                
+            }
+        })
+    </script>
+</body>
+</html>
